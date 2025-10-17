@@ -20,7 +20,7 @@ const blogs: Blog[] = [
         title: "Blog 2",
         date: "10-16-2025",
         description: "This is the description of blog 2",
-        image: "./",
+        image: "../img/random_img.jpg",
         imageAlt: "Blog 2",
         slug: "blog-2",
     },
@@ -37,6 +37,9 @@ blogs.forEach((blog) => {
     const img = document.createElement("img");
     img.src = blog.image;
     img.alt = blog.imageAlt;
+    img.style.height = "200px";
+    img.style.width = "300px";
+
 
     const p = document.createElement("p");
     p.textContent = blog.description;
@@ -51,6 +54,3 @@ blogs.forEach((blog) => {
         window.location.href = `../blogs/${blog.slug}.html`;
     });
 });
-
-
-
