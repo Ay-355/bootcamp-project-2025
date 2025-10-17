@@ -1,21 +1,20 @@
 type Blog = {
-    title: string,
-    date: string
-    description: string
-    image: string
-    imageAlt: string
-    slug: string
-}
+    title: string;
+    date: string;
+    description: string;
+    image: string;
+    imageAlt: string;
+    slug: string;
+};
 
-
-const Blogs: Blog[] = [
+const blogs: Blog[] = [
     {
         title: "Blog 1",
         date: "10-15-2025",
         description: "This is the description of blog 1",
         image: "./",
         imageAlt: "Blog 1",
-        slug: "blog-1"
+        slug: "blog-1",
     },
     {
         title: "Blog 2",
@@ -23,9 +22,35 @@ const Blogs: Blog[] = [
         description: "This is the description of blog 2",
         image: "./",
         imageAlt: "Blog 2",
-        slug: "blog-2"
-    }
-]
+        slug: "blog-2",
+    },
+];
+
+const blogContainer = document.getElementById("blog-container");
+
+blogs.forEach((blog) => {
+    const div = document.createElement("div");
+
+    const h1 = document.createElement("h1");
+    h1.textContent = blog.title;
+
+    const img = document.createElement("img");
+    img.src = blog.image;
+    img.alt = blog.imageAlt;
+
+    const p = document.createElement("p");
+    p.textContent = blog.description;
+
+    div.appendChild(h1);
+    div.appendChild(img);
+    div.appendChild(p);
+
+    blogContainer?.appendChild(div);
+
+    div.addEventListener("click", () => {
+        window.location.href = `../blogs/${blog.slug}.html`;
+    });
+});
 
 
 
