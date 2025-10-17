@@ -9,10 +9,10 @@ type Blog = {
 
 const blogs: Blog[] = [
     {
-        title: "Blog 1",
+        title: "Why are morning classes a thing?",
         date: "10-15-2025",
-        description: "This is the description of blog 1",
-        image: "./",
+        description: "Anything before 11 AM is too early",
+        image: "https://www.shutterstock.com/image-photo/digital-alarm-clock-sits-on-600nw-2646552147.jpg",
         imageAlt: "Blog 1",
         slug: "blog-1",
     },
