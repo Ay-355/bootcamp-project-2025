@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./navbar.module.css";
 import Link from "next/link";
 
@@ -6,7 +5,7 @@ export default function Navbar() {
     return (
         <header className={style.navbar}>
             <h1>
-                <Link href="index.html">Aryan Sippy</Link>
+                <Link href="/">Aryan Sippy</Link>
             </h1>
             <nav>
                 <ul className={style.navList}>
