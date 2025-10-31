@@ -1,13 +1,11 @@
-
-
-export interface Blog = {
+export interface Blog {
     title: String;
     date: String;
     description: String;
     image: String;
     imageAlt: String;
     slug: String;
-};
+}
 
 const blogs: Blog[] = [
     {
@@ -26,6 +24,6 @@ const blogs: Blog[] = [
         imageAlt: "Blog 2",
         slug: "blog-2",
     },
-]
+];
 
-export default blogs
+export default blogs;
