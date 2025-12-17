@@ -1,5 +1,17 @@
 import mongoose, { Schema } from "mongoose";
 
+export type IComment = {
+    user: string;
+    comment: string;
+    time: Date;
+};
+
+const commentSchema = new Schema<IComment>({
+    user: { type: String, required: true },
+    comment: { type: String, required: true },
+    time: { type: Date, required: false, default: new Date() },
+});
+
 type Blog = {
     title: string;
     slug: string;
@@ -8,6 +20,7 @@ type Blog = {
     content: string;
     image: string;
     image_alt: string;
+    comments: IComment[];
 };
 
 const blogSchema = new Schema<Blog>({
@@ -18,6 +31,7 @@ const blogSchema = new Schema<Blog>({
     image: { type: String, required: true },
     image_alt: { type: String, required: true },
     content: { type: String, required: true },
+    comments: { type: [commentSchema], required: false, default: [] },
 });
 
 const Blog = mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
