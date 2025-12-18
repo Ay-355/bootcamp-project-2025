@@ -34,7 +34,7 @@ export default async function BlogPage({ params }: Props) {
             </main>
         );
     } catch (err) {
-        console.log(err);
+        console.error(err);
         return (
             <main>
                 <h1 className="page-title">Blog not found.</h1>
