@@ -14,7 +14,7 @@ function parseCommentTime(time: Date) {
 
 function Comment({ comment }: CommentProps) {
     return (
-        <div>
+        <div style={{ marginBottom: "1rem" }}>
             <strong>{comment.user}</strong>
             <p>{comment.comment}</p>
             <span>{parseCommentTime(comment.time)}</span>

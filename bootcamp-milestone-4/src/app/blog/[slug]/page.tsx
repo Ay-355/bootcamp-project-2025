@@ -80,13 +80,15 @@ export default function BlogPage({ params }: Props) {
 
     return (
         <main>
-            <div>
-                <h1 className="page-title">{blog.title}</h1>
+            <div style={{ maxWidth: 700, margin: "0 auto", padding: "1.5rem" }}>
+                <h1>{blog.title}</h1>
                 <p>{new Date(blog.date).toLocaleDateString("en-US")}</p>
                 <p>{blog.description}</p>
-                <p>{blog.content}</p>
+                <div style={{ margin: "1rem 0" }}>
+                    <p>{blog.content}</p>
+                </div>
             </div>
-            <br />
+            <hr />
             <div>
                 <h3>Comments</h3>
                 {blog.comments?.length > 0 ? (
@@ -97,25 +99,39 @@ export default function BlogPage({ params }: Props) {
                     <p>No comments yet</p>
                 )}
 
-                <form onSubmit={handleSubmit}>
+                <form
+                    onSubmit={handleSubmit}
+                    style={{
+                        marginTop: "1.5rem",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.5rem",
+                    }}
+                >
                     <input
                         type="text"
                         placeholder="Username"
                         value={user}
                         onChange={(e) => setUser(e.target.value)}
+                        style={{ padding: "0.5rem" }}
                     />
                     <textarea
                         placeholder="Comment here..."
                         value={comment}
                         onChange={(e) => setComment(e.target.value)}
                         rows={4}
+                        style={{ padding: "0.5rem" }}
                     />
                     {error && (
                         <p style={{ color: "red", fontSize: "0.9rem" }}>
                             {error}
                         </p>
                     )}
-                    <button type="submit" disabled={posting}>
+                    <button
+                        type="submit"
+                        disabled={posting}
+                        style={{ padding: "0.5rem" }}
+                    >
                         {posting ? "Posting..." : "Post Comment"}
                     </button>
                 </form>
