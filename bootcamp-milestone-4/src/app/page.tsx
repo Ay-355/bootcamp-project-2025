@@ -3,7 +3,7 @@ export default function Home() {
         <main>
             <h1 className="page-title">About Me</h1>
             <div className="about">
-                <div className="about-image">
+                <div>
                     <img
                         src="logo_page_graphics-05 (1).avif"
                         alt="Cal Poly Logo"

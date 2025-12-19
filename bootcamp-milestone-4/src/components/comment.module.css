@@ -1,0 +1,36 @@
+.comment {
+    background-color: #f9fafb;
+    border: 1px solid #e2e2e8;
+    border-radius: 12px;
+    padding: 0.75rem 0.9rem;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #111827;
+}
+
+.date {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.body {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #374151;
+    margin: 0;
+}
+
+.comment:hover {
+    border-color: #c7d2fe;
+}

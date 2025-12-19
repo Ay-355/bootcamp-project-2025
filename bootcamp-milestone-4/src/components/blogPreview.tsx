@@ -1,22 +1,31 @@
-import style from "./blogPreview.module.css";
+import styles from "./blogpreview.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Blog from "@/database/blogSchema";
 
 export default function BlogPreview(props: Blog) {
     return (
-        <div>
-            <h1>{props.title}</h1>
-            <p>{props.date.toLocaleDateString("en-US")}</p>
-            <p>{props.description}</p>
-            <Image
-                src={props.image}
-                alt={props.image_alt}
-                height="200"
-                width="300"
-            />
+        <article className={styles.card}>
+            <div className={styles.imageWrapper}>
+                <Image
+                    src={props.image}
+                    alt={props.image_alt}
+                    fill
+                    className={styles.image}
+                />
+            </div>
 
-            <p><Link href={`/blog/${props.slug}`}>LEARN MORE</Link></p>
-        </div>
+            <div className={styles.content}>
+                <h2 className={styles.title}>{props.title}</h2>
+                <p className={styles.date}>
+                    {props.date.toLocaleDateString("en-US")}
+                </p>
+                <p className={styles.description}>{props.description}</p>
+
+                <Link href={`/blog/${props.slug}`} className={styles.link}>
+                    Learn More →
+                </Link>
+            </div>
+        </article>
     );
 }
